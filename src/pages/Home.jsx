@@ -7,7 +7,7 @@ const Home = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        axios.get('https://crafted-voices-be.vercel.app//api/posts?limit=3')
+        axios.get('https://crafted-voices-be.vercel.app/api/posts?limit=3')
             .then(res => setPosts(res.data.posts))
     }, []);
 

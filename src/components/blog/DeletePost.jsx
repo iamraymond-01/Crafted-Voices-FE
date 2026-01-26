@@ -19,7 +19,7 @@ const DeletePostButton = ({ postId, postTitle, onDeleteSuccess }) => {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.delete(
-                `https://crafted-voices-be.vercel.app//api/posts/${postId}`,
+                `https://crafted-voices-be.vercel.app/api/posts/${postId}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`

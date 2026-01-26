@@ -38,7 +38,7 @@ const Admin = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "https://crafted-voices-be.vercel.app//api/posts",
+        "https://crafted-voices-be.vercel.app/api/posts",
         {
           title,
           content,
@@ -73,7 +73,7 @@ const Admin = () => {
       setLoading(true);
       setError("");
 
-      const res = await axios.get("https://crafted-voices-be.vercel.app//api/posts?limit=20");
+      const res = await axios.get("https://crafted-voices-be.vercel.app/api/posts?limit=20");
       setPosts(res.data.posts);
 
     } catch (err) {

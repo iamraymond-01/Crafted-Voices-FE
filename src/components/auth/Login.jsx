@@ -39,7 +39,7 @@ const Login = () => {
                 setloading(true)
                 setalertMsg('')
 
-                let response = await axios.post('https://crafted-voices-be.vercel.app//api/v1/login', values)
+                let response = await axios.post('https://crafted-voices-be.vercel.app/api/v1/login', values)
                 console.log('Login response:', response.data);
 
                 if (response.data.status) {
