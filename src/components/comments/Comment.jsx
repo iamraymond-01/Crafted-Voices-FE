@@ -114,7 +114,7 @@ const Comment = ({ postId }) => {
             }
 
             const response = await axios.post(
-                `https://crafted-voices-be.onrender.com///api/comments/${postId}`,
+                `https://crafted-voices-be.onrender.com/api/comments/${postId}`,
                 {
                     content: trimmedText
                 },
