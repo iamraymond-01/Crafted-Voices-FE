@@ -13,7 +13,7 @@ const Blog = () => {
             setError("");
 
             try {
-                const res = await axios.get("https://crafted-voices-be.vercel.app/api/posts");
+                const res = await axios.get("https://crafted-voices-be.onrender.com/api/posts");
 
                 setPosts(res.data.posts);
             } catch (error) {

@@ -15,7 +15,7 @@ const SinglePost = () => {
             try {
                 setLoading(true);
                 setError('');
-                const res = await axios.get(`https://crafted-voices-be.vercel.app/api/posts/${id}`);
+                const res = await axios.get(`https://crafted-voices-be.onrender.com/api/posts/${id}`);
                 
                 if (res.data) {
                     setPost(res.data);

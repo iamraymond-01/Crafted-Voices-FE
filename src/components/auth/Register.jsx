@@ -42,7 +42,7 @@ const Register = () => {
         onSubmit: async (values) => {
             try {
                 setloading(true)
-                let response = await axios.post('https://crafted-voices-be.vercel.app/api/v1/signUp', values)
+                let response = await axios.post('https://crafted-voices-be.onrender.com/api/v1/signUp', values)
 
                 if (response.data.status) {
                     let user = response.data.user

@@ -45,7 +45,7 @@ const Comment = ({ postId }) => {
         setError('');
         try {
             console.log('Fetching comments for post:', postId);
-            const res = await axios.get(`https://crafted-voices-be.vercel.app/api/comments/${postId}`);
+            const res = await axios.get(`https://crafted-voices-be.onrender.com/api/comments/${postId}`);
             console.log('Comments API Response:', res.data);
 
             if (res.data && Array.isArray(res.data.comments)) {
@@ -114,7 +114,7 @@ const Comment = ({ postId }) => {
             }
 
             const response = await axios.post(
-                `https://crafted-voices-be.vercel.app//api/comments/${postId}`,
+                `https://crafted-voices-be.onrender.com///api/comments/${postId}`,
                 {
                     content: trimmedText
                 },
