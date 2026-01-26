@@ -1,0 +1,31 @@
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dropdown-menu {
+  min-width: 280px;
+  border-radius: 12px;
+}
+
+.navbar-bg {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
