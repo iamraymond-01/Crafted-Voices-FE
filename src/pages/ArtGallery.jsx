@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Gallery.css';
 
 const ArtGallery = () => {
+  const [likedCards, setLikedCards] = useState({});
+
+  const toggleLike = (id) => {
+    setLikedCards((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
 
   const cards = [
     {
@@ -138,8 +146,17 @@ const ArtGallery = () => {
                   <div className="flex-grow-1">
                     <h5 className="card-title fw-medium mb-1">{card.title}</h5>
                   </div>
-                  <button className="btn btn-link text-dark p-0 ms-2">
-                    <i className="fa-regular fa-heart fa-lg"></i>
+                  <button
+                    className="btn btn-link p-0 ms-2"
+                    onClick={() => toggleLike(card.id)}
+                  >
+                    <i
+                      className={`fa-heart fa-lg ${
+                        likedCards[card.id]
+                          ? 'fas text-danger'
+                          : 'far text-dark'
+                      }`}
+                    ></i>
                   </button>
                 </div>
 
