@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Gallery.css';
 
 const ArtGallery = () => {
-  const [likedCards, setLikedCards] = useState({});
+  const [likedCards, setLikedCards] = useState(() => {
+  const savedLikes = localStorage.getItem('likedCards');
+  return savedLikes ? JSON.parse(savedLikes) : {};
+});
+
+useEffect(() => {
+  localStorage.setItem('likedCards', JSON.stringify(likedCards));
+}, [likedCards]);
 
   const toggleLike = (id) => {
     setLikedCards((prev) => ({
@@ -79,10 +86,10 @@ const ArtGallery = () => {
     {
       id: 9,
       image: "https://plus.unsplash.com/premium_photo-1679692887401-d4ad08cfeebe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dHJhZGl0aW9ufGVufDB8fDB8fHww",
-      title: "Tribal Mark",
+      title: "Cultural Celebration",
       author: "Felix Olusola",
       category: "Culture",
-      updated: "1 month ago"
+      updated: "5 month ago"
     },
   ];
 
