@@ -10,7 +10,7 @@ const Comment = ({ postId }) => {
     const [submitting, setSubmitting] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
 
-    // Get current user from localStorage
+    // Get user from localStorage
     useEffect(() => {
         const getUser = () => {
             try {

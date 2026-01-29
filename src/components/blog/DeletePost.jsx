@@ -1,4 +1,3 @@
-// components/posts/DeletePostButton.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -9,8 +8,7 @@ const DeletePostButton = ({ postId, postTitle, onDeleteSuccess }) => {
     const navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem('user')) || {};
 
-    // Check if user can delete (admin or author)
-    const canDelete = user.isAdmin; // For now, only admin can delete
+    const canDelete = user.isAdmin;
 
     const handleDelete = async () => {
         if (!canDelete) return;
@@ -32,7 +30,7 @@ const DeletePostButton = ({ postId, postTitle, onDeleteSuccess }) => {
             if (onDeleteSuccess) {
                 onDeleteSuccess(postId);
             } else {
-                // Redirect to blog page if no callback provided
+                // Redirect to blog page
                 navigate('/blog');
             }
             
