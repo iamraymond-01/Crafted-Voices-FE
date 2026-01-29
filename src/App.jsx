@@ -18,7 +18,6 @@ import AuthGuard from './auth/AuthGuard'
 
 
 const App = () => {
-  let isAuthenticated = localStorage.getItem("token");
 
   return (
     <Routes>
@@ -40,7 +39,7 @@ const App = () => {
       <Route path='/register' element={<Register />}></Route>
 
       {/* Only logged-in user */}
-      <Route element={<AuthGuard isAuthenticated={isAuthenticated} />}>
+      <Route element={<AuthGuard/>}>
         <Route path='/home' element={<>
           <Header />
           <Home />

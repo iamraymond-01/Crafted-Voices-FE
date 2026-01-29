@@ -1,14 +1,14 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 
-const AuthGuard = ({isAuthenticated, redirect_path="/login", children}) => {
+const AuthGuard = () => {
+  const token = localStorage.getItem("token");
 
-    if(!isAuthenticated){
-        return <Navigate  to={redirect_path} replace/>
-    }else{
-      return children?children:<Outlet/>
-    }
-  
-}
+  if (!token) {
+    return <Navigate to={"/login"} replace />;
+  }
+
+  return <Outlet/>;
+};
 
 export default AuthGuard
